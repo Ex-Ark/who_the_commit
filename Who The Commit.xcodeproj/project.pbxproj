@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA51FEAF21E3540000349A53 /* GithubCommit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51FEAE21E3540000349A53 /* GithubCommit.swift */; };
+		EA51FEB121E3574E00349A53 /* GithubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51FEB021E3574E00349A53 /* GithubClient.swift */; };
+		EA51FEB321E3575E00349A53 /* GithubSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51FEB221E3575E00349A53 /* GithubSearchResult.swift */; };
 		EAA178FE21E346B20024E97E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA178FD21E346B20024E97E /* AppDelegate.swift */; };
 		EAA1790021E346B20024E97E /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA178FF21E346B20024E97E /* MasterViewController.swift */; };
 		EAA1790221E346B20024E97E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA1790121E346B20024E97E /* DetailViewController.swift */; };
 		EAA1790521E346B20024E97E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA1790321E346B20024E97E /* Main.storyboard */; };
 		EAA1790721E346B40024E97E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAA1790621E346B40024E97E /* Assets.xcassets */; };
 		EAA1790A21E346B40024E97E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA1790821E346B40024E97E /* LaunchScreen.storyboard */; };
+		EAA1791221E346FE0024E97E /* WTCommit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA1791121E346FE0024E97E /* WTCommit.swift */; };
+		EAA1791421E348400024E97E /* WTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA1791321E348400024E97E /* WTClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA51FEAE21E3540000349A53 /* GithubCommit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubCommit.swift; sourceTree = "<group>"; };
+		EA51FEB021E3574E00349A53 /* GithubClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubClient.swift; sourceTree = "<group>"; };
+		EA51FEB221E3575E00349A53 /* GithubSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSearchResult.swift; sourceTree = "<group>"; };
 		EAA178FA21E346B20024E97E /* Who The Commit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Who The Commit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA178FD21E346B20024E97E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAA178FF21E346B20024E97E /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +32,8 @@
 		EAA1790621E346B40024E97E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAA1790921E346B40024E97E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAA1790B21E346B40024E97E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAA1791121E346FE0024E97E /* WTCommit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTCommit.swift; sourceTree = "<group>"; };
+		EAA1791321E348400024E97E /* WTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,11 @@
 				EAA1790621E346B40024E97E /* Assets.xcassets */,
 				EAA1790821E346B40024E97E /* LaunchScreen.storyboard */,
 				EAA1790B21E346B40024E97E /* Info.plist */,
+				EAA1791121E346FE0024E97E /* WTCommit.swift */,
+				EAA1791321E348400024E97E /* WTClient.swift */,
+				EA51FEAE21E3540000349A53 /* GithubCommit.swift */,
+				EA51FEB021E3574E00349A53 /* GithubClient.swift */,
+				EA51FEB221E3575E00349A53 /* GithubSearchResult.swift */,
 			);
 			path = "Who The Commit";
 			sourceTree = "<group>";
@@ -139,8 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAA1790221E346B20024E97E /* DetailViewController.swift in Sources */,
+				EAA1791221E346FE0024E97E /* WTCommit.swift in Sources */,
 				EAA1790021E346B20024E97E /* MasterViewController.swift in Sources */,
+				EA51FEB321E3575E00349A53 /* GithubSearchResult.swift in Sources */,
+				EAA1791421E348400024E97E /* WTClient.swift in Sources */,
+				EA51FEB121E3574E00349A53 /* GithubClient.swift in Sources */,
 				EAA178FE21E346B20024E97E /* AppDelegate.swift in Sources */,
+				EA51FEAF21E3540000349A53 /* GithubCommit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

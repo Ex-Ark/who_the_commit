@@ -8,32 +8,40 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UITableViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-
+    @IBOutlet weak var tableView2: UITableView!
+    
 
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = detailItem {
+            
             if let label = detailDescriptionLabel {
-                label.text = detail.description
+                label.text = detail.githubResult?.items[0].committer?.login
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView2.delegate = self
+        tableView2.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
     }
 
-    var detailItem: NSDate? {
+    var detailItem: WTCommit? {
         didSet {
             // Update the view.
             configureView()
         }
     }
+    
+    
+
+    
 
 
 }
