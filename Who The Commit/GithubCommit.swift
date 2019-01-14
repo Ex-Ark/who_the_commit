@@ -14,6 +14,10 @@ class GithubCommit: Decodable {
     var commit: Commit
     var committer: Committer?
     var repository: Repository?
+    var score: Float?
+    
+    //not read in json. Set by async http call when full infos are retrieved
+    var full_infos: GithubRepositoryInformations?
     
     enum CodingKeys: String, CodingKey {
         case htmlUrl = "html_url"
@@ -22,6 +26,7 @@ class GithubCommit: Decodable {
         case commit
         case committer
         case repository
+        case score
     }
     
     class Commit: Decodable {
@@ -61,10 +66,12 @@ class GithubCommit: Decodable {
         var description: String?
         var apiUrl: String?
         var htmlUrl: String?
+        var fullName: String?
         
         enum CodingKeys: String, CodingKey {
             case name
             case description
+            case fullName = "full_name"
             case htmlUrl = "html_url"
             case apiUrl = "url"
         }

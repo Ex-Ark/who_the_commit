@@ -14,6 +14,8 @@ class CommitCell: UITableViewCell {
     @IBOutlet weak var committerAvatarImage: UIImageView!
     @IBOutlet weak var repoNameLabel: UILabel!
     @IBOutlet weak var spin: UIActivityIndicatorView!
+    @IBOutlet weak var spinCount: UIActivityIndicatorView!
+    @IBOutlet weak var countLabel: UILabel!
 }
 
 class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -36,8 +38,12 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
                 self.ghclient.search(commit: detail, handler: {
                     (results) in
                     detail.githubResult = results
-                    self.objects = results.items
+                    // filter only interesting ones
+                    self.objects = results.items.filter({ (GithubCommit) -> Bool in
+                        GithubCommit.score!  >= 30.00
+                    })
                     self.tableView2.reloadData()
+                    self.loadAdditionnalInfos()
                 })
             } else {
                 self.objects = detail.githubResult!.items
@@ -81,14 +87,56 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         return objects.count
     }
     
+    // TODO: check if search_quota (10 per minute) is exceeded by getting N url
+    // DONE: yes it does
+    /*
+ {
+    "message": "API rate limit exceeded for XXX.XXX.XX.XX (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
+    "documentation_url": "https://developer.github.com/v3/#rate-limiting"
+}
+ */
+    // we only do it for the first ones then
+    // proof it works
+    func loadAdditionnalInfos(){
+        for (index, commit) in objects.prefix(3).enumerated() {
+            request(urlString: commit.repository?.apiUrl ?? "", completionHandler: { data in
+                guard let data = data else {
+                    print(String(format: "Error while getting the repository: %@",commit.repository?.apiUrl ?? "nil"))
+                    return
+                }
+                guard let repoInfos = try? JSONDecoder().decode(GithubRepositoryInformations.self, from: data) else {
+                    print("Error: Couldn't decode full information about repository")
+                    return
+                }
+                print(repoInfos)
+                self.objects[index].full_infos = repoInfos
+                let indexPath = IndexPath(item: index, section: 0)
+                self.tableView2.reloadRows(at: [indexPath], with: .top)
+            })
+        }
+         self.tableView2.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commitCell", for: indexPath) as! CommitCell
         
         let object = objects[indexPath.row]
         cell.committerNameLabel.text = object.committer?.login
-        cell.repoNameLabel.text = object.repository?.name
+        cell.repoNameLabel.text = object.repository?.fullName
         cell.spin.startAnimating()
         cell.committerAvatarImage.image = nil
+        
+        // hide additional infos for now
+        if object.full_infos == nil {
+            cell.spinCount.startAnimating()
+            cell.countLabel.isHidden = true
+        }
+        else{
+            cell.spinCount.stopAnimating()
+            cell.countLabel.text = String(format: "%d stars", object.full_infos!.stars)
+            cell.countLabel.isHidden = false
+        }
+        
         request(urlString: object.committer?.avatar ?? "", completionHandler: { data in
             guard let data = data else {
                 // Display error
@@ -99,7 +147,6 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             // UI thread, use data image
             cell.committerAvatarImage.image = UIImage(data: data)
         })
-        
         return cell
     }
     

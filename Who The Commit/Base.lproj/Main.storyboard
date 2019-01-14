@@ -65,7 +65,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10 | 20 | 30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTm-R9-qOz">
-                                                    <rect key="frame" x="123" y="64" width="87" height="21"/>
+                                                    <rect key="frame" x="123" y="64" width="227" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -75,13 +75,19 @@
                                                     <rect key="frame" x="44" y="45" width="20" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </activityIndicatorView>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5JP-dU-qrI">
+                                                    <rect key="frame" x="162" y="64" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="committerAvatarImage" destination="jJe-Be-1dK" id="Ecw-o1-mjO"/>
                                             <outlet property="committerNameLabel" destination="N8B-Qi-L3B" id="5l3-b3-oYH"/>
+                                            <outlet property="countLabel" destination="BTm-R9-qOz" id="8s3-zs-uUW"/>
                                             <outlet property="repoNameLabel" destination="zal-DP-qbR" id="LWk-Pl-5zu"/>
                                             <outlet property="spin" destination="Lct-6g-ET9" id="UM5-tt-hDu"/>
+                                            <outlet property="spinCount" destination="5JP-dU-qrI" id="Edp-Nt-Gmz"/>
                                             <segue destination="YAF-ZG-7f9" kind="show" identifier="showCommitDetail" id="wwe-et-ppc"/>
                                         </connections>
                                     </tableViewCell>
@@ -128,10 +134,26 @@
                                     <action selector="pressCommitUrl:" destination="YAF-ZG-7f9" eventType="touchUpInside" id="NVl-id-IN1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLr-lc-jBE">
+                                <rect key="frame" x="16" y="183" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pressRepoUrl:" destination="YAF-ZG-7f9" eventType="touchUpInside" id="DhV-9Q-jnG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cga-PJ-AbR">
+                                <rect key="frame" x="16" y="221" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pressUserUrl:" destination="YAF-ZG-7f9" eventType="touchUpInside" id="Pef-Bc-CId"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="gLr-lc-jBE" firstAttribute="top" secondItem="nZL-p7-gCo" secondAttribute="bottom" constant="8" id="DKv-hh-8aa"/>
                             <constraint firstItem="nZL-p7-gCo" firstAttribute="top" secondItem="tAc-XS-hkI" secondAttribute="bottom" constant="31.5" id="ERq-fK-enn"/>
+                            <constraint firstItem="Cga-PJ-AbR" firstAttribute="top" secondItem="gLr-lc-jBE" secondAttribute="bottom" constant="8" id="WI6-1o-i57"/>
                             <constraint firstItem="mYy-aZ-xVd" firstAttribute="top" secondItem="FKD-Rt-RxZ" secondAttribute="top" id="u9O-Hd-M2m"/>
                             <constraint firstItem="tAc-XS-hkI" firstAttribute="top" secondItem="mYy-aZ-xVd" secondAttribute="bottom" constant="8" id="xnQ-7c-Oem"/>
                         </constraints>
@@ -142,6 +164,8 @@
                         <outlet property="commitHashLabel" destination="tAc-XS-hkI" id="ru4-Kd-KCM"/>
                         <outlet property="commitMessageLabel" destination="mYy-aZ-xVd" id="D3q-rG-9rc"/>
                         <outlet property="httpCommitLink" destination="nZL-p7-gCo" id="E42-wm-P2i"/>
+                        <outlet property="httpRepoLink" destination="gLr-lc-jBE" id="cci-sI-92a"/>
+                        <outlet property="httpUserLink" destination="Cga-PJ-AbR" id="cpt-2o-ozu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Mr-qD-VMT" userLabel="First Responder" sceneMemberID="firstResponder"/>

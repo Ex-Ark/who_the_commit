@@ -18,6 +18,7 @@
 		EAA1790A21E346B40024E97E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA1790821E346B40024E97E /* LaunchScreen.storyboard */; };
 		EAA1791221E346FE0024E97E /* WTCommit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA1791121E346FE0024E97E /* WTCommit.swift */; };
 		EAA1791421E348400024E97E /* WTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA1791321E348400024E97E /* WTClient.swift */; };
+		EABBF0B021ECBE400087C312 /* GithubRepositoryInformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABBF0AF21ECBE400087C312 /* GithubRepositoryInformations.swift */; };
 		EADECFE421EC7E9D004DDEF7 /* HttpUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADECFE321EC7E9D004DDEF7 /* HttpUtils.swift */; };
 		EADECFE621EC8CF7004DDEF7 /* CommitDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADECFE521EC8CF7004DDEF7 /* CommitDetailController.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		EAA1790B21E346B40024E97E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAA1791121E346FE0024E97E /* WTCommit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTCommit.swift; sourceTree = "<group>"; };
 		EAA1791321E348400024E97E /* WTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTClient.swift; sourceTree = "<group>"; };
+		EABBF0AF21ECBE400087C312 /* GithubRepositoryInformations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepositoryInformations.swift; sourceTree = "<group>"; };
 		EADECFE321EC7E9D004DDEF7 /* HttpUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtils.swift; sourceTree = "<group>"; };
 		EADECFE521EC8CF7004DDEF7 /* CommitDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 				EA51FEB221E3575E00349A53 /* GithubSearchResult.swift */,
 				EADECFE321EC7E9D004DDEF7 /* HttpUtils.swift */,
 				EADECFE521EC8CF7004DDEF7 /* CommitDetailController.swift */,
+				EABBF0AF21ECBE400087C312 /* GithubRepositoryInformations.swift */,
 			);
 			path = "Who The Commit";
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				EAA1791221E346FE0024E97E /* WTCommit.swift in Sources */,
 				EADECFE421EC7E9D004DDEF7 /* HttpUtils.swift in Sources */,
 				EAA1790021E346B20024E97E /* MasterViewController.swift in Sources */,
+				EABBF0B021ECBE400087C312 /* GithubRepositoryInformations.swift in Sources */,
 				EA51FEB321E3575E00349A53 /* GithubSearchResult.swift in Sources */,
 				EADECFE621EC8CF7004DDEF7 /* CommitDetailController.swift in Sources */,
 				EAA1791421E348400024E97E /* WTClient.swift in Sources */,
