@@ -19,6 +19,7 @@
 		EAA1791221E346FE0024E97E /* WTCommit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA1791121E346FE0024E97E /* WTCommit.swift */; };
 		EAA1791421E348400024E97E /* WTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA1791321E348400024E97E /* WTClient.swift */; };
 		EADECFE421EC7E9D004DDEF7 /* HttpUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADECFE321EC7E9D004DDEF7 /* HttpUtils.swift */; };
+		EADECFE621EC8CF7004DDEF7 /* CommitDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADECFE521EC8CF7004DDEF7 /* CommitDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		EAA1791121E346FE0024E97E /* WTCommit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTCommit.swift; sourceTree = "<group>"; };
 		EAA1791321E348400024E97E /* WTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTClient.swift; sourceTree = "<group>"; };
 		EADECFE321EC7E9D004DDEF7 /* HttpUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtils.swift; sourceTree = "<group>"; };
+		EADECFE521EC8CF7004DDEF7 /* CommitDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				EA51FEB021E3574E00349A53 /* GithubClient.swift */,
 				EA51FEB221E3575E00349A53 /* GithubSearchResult.swift */,
 				EADECFE321EC7E9D004DDEF7 /* HttpUtils.swift */,
+				EADECFE521EC8CF7004DDEF7 /* CommitDetailController.swift */,
 			);
 			path = "Who The Commit";
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				EADECFE421EC7E9D004DDEF7 /* HttpUtils.swift in Sources */,
 				EAA1790021E346B20024E97E /* MasterViewController.swift in Sources */,
 				EA51FEB321E3575E00349A53 /* GithubSearchResult.swift in Sources */,
+				EADECFE621EC8CF7004DDEF7 /* CommitDetailController.swift in Sources */,
 				EAA1791421E348400024E97E /* WTClient.swift in Sources */,
 				EA51FEB121E3574E00349A53 /* GithubClient.swift in Sources */,
 				EAA178FE21E346B20024E97E /* AppDelegate.swift in Sources */,

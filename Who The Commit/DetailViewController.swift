@@ -24,6 +24,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     var ghclient: GithubClient = GithubClient()
     
     var objects = [GithubCommit]()
+    
+    var commitDetailController: CommitDetailController? = nil
 
     func configureView() {
         // Update the user interface for the detail item.
@@ -50,6 +52,16 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         tableView2.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCommitDetail" {
+            if let indexPath = tableView2.indexPathForSelectedRow {
+                let object = objects[indexPath.row]
+                let controller = segue.destination as! CommitDetailController
+                controller.commit = object
+            }
+        }
     }
 
     var detailItem: WTCommit? {

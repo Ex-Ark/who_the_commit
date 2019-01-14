@@ -82,6 +82,7 @@
                                             <outlet property="committerNameLabel" destination="N8B-Qi-L3B" id="5l3-b3-oYH"/>
                                             <outlet property="repoNameLabel" destination="zal-DP-qbR" id="LWk-Pl-5zu"/>
                                             <outlet property="spin" destination="Lct-6g-ET9" id="UM5-tt-hDu"/>
+                                            <segue destination="YAF-ZG-7f9" kind="show" identifier="showCommitDetail" id="wwe-et-ppc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -99,6 +100,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="128.18590704647679"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="AYT-dp-Hs0">
+            <objects>
+                <viewController id="YAF-ZG-7f9" customClass="CommitDetailController" customModule="Who_The_Commit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CaU-gZ-lnf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="commitmessage" textAlignment="justified" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYy-aZ-xVd">
+                                <rect key="frame" x="16" y="64" width="359" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="hash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAc-XS-hkI">
+                                <rect key="frame" x="16" y="92.5" width="333" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZL-p7-gCo">
+                                <rect key="frame" x="16" y="145" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pressCommitUrl:" destination="YAF-ZG-7f9" eventType="touchUpInside" id="NVl-id-IN1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nZL-p7-gCo" firstAttribute="top" secondItem="tAc-XS-hkI" secondAttribute="bottom" constant="31.5" id="ERq-fK-enn"/>
+                            <constraint firstItem="mYy-aZ-xVd" firstAttribute="top" secondItem="FKD-Rt-RxZ" secondAttribute="top" id="u9O-Hd-M2m"/>
+                            <constraint firstItem="tAc-XS-hkI" firstAttribute="top" secondItem="mYy-aZ-xVd" secondAttribute="bottom" constant="8" id="xnQ-7c-Oem"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FKD-Rt-RxZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="mLO-4r-2Pr"/>
+                    <connections>
+                        <outlet property="commitHashLabel" destination="tAc-XS-hkI" id="ru4-Kd-KCM"/>
+                        <outlet property="commitMessageLabel" destination="mYy-aZ-xVd" id="D3q-rG-9rc"/>
+                        <outlet property="httpCommitLink" destination="nZL-p7-gCo" id="E42-wm-P2i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Mr-qD-VMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1525.5999999999999" y="122.78860569715144"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">

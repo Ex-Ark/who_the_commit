@@ -26,6 +26,20 @@ class GithubCommit: Decodable {
     
     class Commit: Decodable {
         var message: String?
+        var tree: Tree
+        var date: Date? {
+            return ISO8601DateFormatter().date(from: author.date)
+        }
+        var author: Author
+        var hash : String? {
+            return tree.sha
+        }
+        class Tree: Decodable {
+            var sha: String?
+        }
+        class Author: Decodable {
+            var date: String
+        }
     }
     
     class Committer: Decodable {
