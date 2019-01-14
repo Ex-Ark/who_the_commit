@@ -13,7 +13,6 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [WTCommit]()
     var wtclient: WTClient = WTClient()
-    var ghclient: GithubClient = GithubClient()
 
 
     override func viewDidLoad() {
@@ -42,12 +41,6 @@ class MasterViewController: UITableViewController {
             newCommit.hash = commit.hash
             newCommit.message = commit.message
             newCommit.permalink = commit.permalink
-            
-            self.ghclient.search(commit: newCommit, handler: {
-                (results) in
-                newCommit.githubResult = results
-                self.tableView.reloadData()
-            })
             
             self.tableView.reloadData()
         })

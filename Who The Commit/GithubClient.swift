@@ -32,8 +32,9 @@ class GithubClient {
                         print("Error: Couldn't decode data into GithubSearchResult")
                         return
                     }
-                    print(commit)
-                    handler(commit)
+                    DispatchQueue.main.async {
+                        handler(commit)
+                    }
                 } else {
                     print("ERROROOOOOROR")
                 }

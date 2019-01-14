@@ -24,7 +24,9 @@ class WTClient {
                         print("Error: Couldn't decode data into WTCommit")
                         return
                     }
-                    handler(commit)
+                    DispatchQueue.main.async {
+                        handler(commit)
+                    }
                 }
             }
             task.resume()
